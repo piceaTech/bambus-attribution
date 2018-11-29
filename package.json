@@ -1,7 +1,7 @@
 {
   "name": "@bambus/attribution",
   "version": "0.1.0",
-  "description": "Framework for koa and sequelize",
+  "description": "Bambus Plugin for Attributing changes",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/piceaTech/bambus.git"
+    "url": "git+ssh://git@github.com/piceaTech/bambus-attribution.git"
   },
   "author": "Felix Fichte <dev@spruce.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/piceaTech/bambus/issues"
+    "url": "https://github.com/piceaTech/bambus-attribution/issues"
   },
-  "homepage": "https://github.com/piceaTech/bambus#readme",
+  "homepage": "https://github.com/piceaTech/bambus-attribution#readme",
   "dependencies": {
     "@bambus/main": "^0.1.1",
     "koa": "^2.6.1",
