@@ -35,17 +35,18 @@ export default function(bambus: Bambus){
        continue;
     }
     debug(`${controller}Controller is a JSONAPIController therefore attribution is used on it.`)
-    
-    if(currentController.modelClass.prototype[createdBySymbol]){
-      //create post
-      currentController.router.post('set CreatedBy', '/', setCreatedBy(currentController.modelClass.prototype[createdBySymbol]));
-    }
+    currentController.executeAfterFormatter(setUpMiddleware);
+  }
+}
+function setUpMiddleware(this: JSONAPIController<any>){ // bound to the controller
+  if(this.modelClass.prototype[createdBySymbol]){
+    //create post
+    this.router.post('set CreatedBy', '/', setCreatedBy(this.modelClass.prototype[createdBySymbol]));
+  }
 
-    if(currentController.modelClass.prototype[updatedBySymbol]){
-      currentController.router.post('set UpdatedBy', '/', setUpdatedBy(currentController.modelClass.prototype[updatedBySymbol]));
-      currentController.router.patch('set updatedBy', '/:id', setUpdatedBy(currentController.modelClass.prototype[updatedBySymbol]));
-      
-    }
+  if(this.modelClass.prototype[updatedBySymbol]){
+    this.router.post('set UpdatedBy', '/', setUpdatedBy(this.modelClass.prototype[updatedBySymbol]));
+    this.router.patch('set updatedBy', '/:id', setUpdatedBy(this.modelClass.prototype[updatedBySymbol]));
   }
 }
 
@@ -68,7 +69,7 @@ function setCreatedBy(property: string){
       throw new Error('User is not authenticated.')
     }
     if(typeof ctx.request.body === 'object'){
-      (<any>ctx.request.body)[property] = ctx.state.user.id
+      (<any>ctx.request.body)[property] = ctx.state.user.id;
     }
     return next();
   }
