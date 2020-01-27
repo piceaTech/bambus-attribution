@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/piceaTech/bambus-attribution/compare/v0.1.1...v0.1.2) (2020-01-27)
+
+
+### Bug Fixes
+
+* [@bambus](https://github.com/bambus)/main as peerDependency ([a665d02](https://github.com/piceaTech/bambus-attribution/commit/a665d02))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/piceaTech/bambus-attribution/compare/v0.1.0...v0.1.1) (2018-12-14)
 

@@ -1,6 +1,6 @@
 {
   "name": "@bambus/attribution",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bambus Plugin for Attributing changes",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
